@@ -1,5 +1,5 @@
 name: "Stirling PDF"
-version: "1.0.8"
+version: "1.0.9"
 slug: "stirling_pdf"
 description: "Locally hosted web application for various PDF operations."
 arch:
