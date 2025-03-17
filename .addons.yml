@@ -1,5 +1,5 @@
 channel: stable
 addons:
   stirling_pdf:
-    repository: Poeschl-HomeAssistant-Addons/asterisk
+    repository: Dula Add-on Repository/stirling_pdf
     target: stirling_pdf
