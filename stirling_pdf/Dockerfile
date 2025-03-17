@@ -5,6 +5,4 @@ RUN apk add --no-cache tini
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-ENTRYPOINT ["/sbin/tini", "-s", "--"]
-
-CMD [ "/run.sh" ]
+ENTRYPOINT ["/sbin/tini", "-s", "--", "/run.sh"]
