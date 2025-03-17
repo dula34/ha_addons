@@ -1,0 +1,5 @@
+channel: stable
+addons:
+  stirling_pdf:
+    repository: Poeschl-HomeAssistant-Addons/asterisk
+    target: stirling_pdf
