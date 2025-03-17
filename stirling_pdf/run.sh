@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bashio
 
 enable_security=$(bashio::config 'enable_security')
 
