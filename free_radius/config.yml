@@ -2,20 +2,10 @@ name: "Free radius"
 version: "1.0.0"
 slug: "free_radius"
 description: "FreeRADIUS is a high-performance, highly configurable, and feature-rich RADIUS server."
+init: false
 arch:
   - aarch64
   - amd64
   - armhf
   - armv7
   - i386
-startup: application
-boot: auto
-ports:
-#  1812/udp: 1812
-#  1813/udp: 1813
-ingress: false
-host_network: true
-options:
-
-schema:
-
