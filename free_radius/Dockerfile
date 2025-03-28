@@ -3,6 +3,7 @@ FROM $BUILD_FROM
 
 RUN apk add --no-cache freeradius freeradius-utils
 
-EXPOSE 1812/udp 1813/udp
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
 
-CMD ["freeradius", "-X"]
+CMD ["/run.sh"]
