@@ -1,0 +1,31 @@
+name: "Nginx Proxy Manager"
+version: "2.14.0"
+slug: "nginx_proxy_manager"
+description: "Reverse proxy manager with Let's Encrypt (jc21/nginx-proxy-manager)"
+url: "https://github.com/jc21/nginx-proxy-manager"
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+init: false
+host_network: false
+
+environment:
+  S6_STAGE2_HOOK: "/etc/stage2-hook.sh"
+
+ports:
+  "80/tcp": 80
+  "81/tcp": 81
+  "443/tcp": 443
+ports_description:
+  "80/tcp": "HTTP"
+  "81/tcp": "Admin UI"
+  "443/tcp": "HTTPS"
+
+map:
+  - type: addon_config
+    read_only: false
+
+options: {}
+schema: {}

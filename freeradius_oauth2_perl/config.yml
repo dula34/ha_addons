@@ -1,0 +1,29 @@
+name: "FreeRADIUS Azure AD"
+version: "10.0.6"
+slug: "freeradius_oauth2_perl"
+description: "FreeRADIUS server with support Azure AD OAuth2"
+url: "https://github.com/arklab/freeradius-azuread"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+
+options:
+  ad_domain: ""
+  ad_client: ""
+  ad_secret: ""
+  nas_name: ""
+  nas_network: ""
+  nas_secret: ""
+schema:
+  ad_domain: "str"
+  ad_client: "str"
+  ad_secret: "str"
+  nas_name: "str"
+  nas_network: "str"
+  nas_secret: "str"
+ports:
+  1812/udp: 1812
+  1813/udp: 1813
