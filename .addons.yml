@@ -4,8 +4,8 @@ addons:
     repository: Dula Add-on Repository/stirling_pdf
     target: stirling_pdf
   freeradius_oauth2_perl:
-    repository: Dula Add-on Repository/freeradius_oauth2_perl
-    target: freeradius_oauth2_perl
+    repository: Dula Add-on Repository/freeradius_azuread
+    target: freeradius_azuread
   npm:
     repository: Dula Add-on Repository/npm
     target: npm

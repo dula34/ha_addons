@@ -1,6 +1,6 @@
 name: "FreeRADIUS Azure AD"
 version: "10.0.6"
-slug: "freeradius_oauth2_perl"
+slug: "freeradius_azuread"
 description: "FreeRADIUS server with support Azure AD OAuth2"
 url: "https://github.com/arklab/freeradius-azuread"
 init: false
