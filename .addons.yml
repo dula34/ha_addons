@@ -9,3 +9,6 @@ addons:
   npm:
     repository: Dula Add-on Repository/npm
     target: npm
+  esphome_mcp:
+    repository: Dula Add-on Repository/esphome_mcp
+    target: esphome_mcp

@@ -1,0 +1,31 @@
+name: "ESPHome MCP"
+version: "1.0.0"
+slug: "esphome_mcp"
+description: "Model Context Protocol (MCP) server that lets LLM clients (e.g. Claude) manage ESPHome devices: read/write YAML configs, compile firmware, OTA install, fetch logs and live entity states."
+url: "https://github.com/jeeftor/esphome-mcp"
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+init: false
+host_network: false
+
+ports:
+  3333/tcp: 3333
+ports_description:
+  3333/tcp: "MCP server endpoint (Streamable HTTP transport, path /mcp)"
+
+options:
+  esphome_url: "http://5c53de3b-esphome:6052"
+  esphome_username: ""
+  esphome_password: ""
+  esphome_psk: ""
+  ha_addon_mode: true
+
+schema:
+  esphome_url: "str"
+  esphome_username: "str"
+  esphome_password: "password"
+  esphome_psk: "password"
+  ha_addon_mode: "bool"
