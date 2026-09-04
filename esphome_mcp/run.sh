@@ -1,13 +1,17 @@
-#!/usr/bin/with-contenv bashio
+#!/bin/sh
+set -e
 
-bashio::log.info "Starting ESPHome MCP server..."
+CONFIG_PATH=/data/options.json
 
-export ESPHOME_URL=$(bashio::config 'esphome_url')
-export ESPHOME_USERNAME=$(bashio::config 'esphome_username')
-export ESPHOME_PASSWORD=$(bashio::config 'esphome_password')
-export ESPHOME_PSK=$(bashio::config 'esphome_psk')
-export ESPHOME_HA_ADDON=$(bashio::config 'ha_addon_mode')
+get_option() {
+  python3 -c "import json; v = json.load(open('$CONFIG_PATH')).get('$1') or ''; print(v)"
+}
 
-bashio::log.info "Connecting to ESPHome dashboard at ${ESPHOME_URL}"
+export ESPHOME_DASHBOARD_URL="$(get_option esphome_dashboard_url)"
+export ESPHOME_DASHBOARD_USERNAME="$(get_option esphome_dashboard_username)"
+export ESPHOME_DASHBOARD_PASSWORD="$(get_option esphome_dashboard_password)"
+export LOG_LEVEL="$(get_option log_level)"
 
-exec /usr/local/bin/esphome-mcp serve --http-addr 0.0.0.0:3333
+echo "[esphome_mcp] Connecting to ESPHome dashboard at ${ESPHOME_DASHBOARD_URL}"
+
+exec esphome-mcp-web

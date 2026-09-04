@@ -1,8 +1,8 @@
 name: "ESPHome MCP"
-version: "1.0.0"
+version: "1.0.1"
 slug: "esphome_mcp"
-description: "Model Context Protocol (MCP) server that lets LLM clients (e.g. Claude) manage ESPHome devices: read/write YAML configs, compile firmware, OTA install, fetch logs and live entity states."
-url: "https://github.com/jeeftor/esphome-mcp"
+description: "Model Context Protocol (MCP) server that lets LLM clients (e.g. Claude) manage ESPHome devices via the ESPHome Device Builder dashboard."
+url: "https://github.com/loryanstrant/ESPHome-MCP"
 arch:
   - amd64
   - aarch64
@@ -12,20 +12,18 @@ init: false
 host_network: false
 
 ports:
-  3333/tcp: 3333
+  8080/tcp: 8080
 ports_description:
-  3333/tcp: "MCP server endpoint (Streamable HTTP transport, path /mcp)"
+  8080/tcp: "MCP server endpoint (Streamable HTTP transport, path /mcp)"
 
 options:
-  esphome_url: "http://5c53de3b-esphome:6052"
-  esphome_username: ""
-  esphome_password: ""
-  esphome_psk: ""
-  ha_addon_mode: true
+  esphome_dashboard_url: "http://core_esphome:6052"
+  esphome_dashboard_username: ""
+  esphome_dashboard_password: ""
+  log_level: "INFO"
 
 schema:
-  esphome_url: "str"
-  esphome_username: "str"
-  esphome_password: "password"
-  esphome_psk: "password"
-  ha_addon_mode: "bool"
+  esphome_dashboard_url: "str"
+  esphome_dashboard_username: "str"
+  esphome_dashboard_password: "password"
+  log_level: "list(DEBUG|INFO|WARNING|ERROR)"

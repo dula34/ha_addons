@@ -1,19 +1,14 @@
-# Base image provided by Home Assistant add-on build environment.
-ARG BUILD_FROM
+# Upstream image already ships a full Python runtime with esphome-mcp-web
+# installed, so we build directly on top of it instead of the HA add-on
+# base image.
+FROM ghcr.io/loryanstrant/esphome-mcp:latest
 
-# Pull the upstream esphome-mcp binary out of its official (FROM scratch)
-# release image, since that image has no shell/bashio for HA add-on startup.
-FROM ghcr.io/jeeftor/esphome-mcp:latest AS upstream
-
-FROM $BUILD_FROM
-
-COPY --from=upstream /usr/local/bin/esphome-mcp /usr/local/bin/esphome-mcp
-
-# Copy Home Assistant add-on startup script.
+# Home Assistant add-on startup script: translates /data/options.json into
+# the environment variables this app expects, then execs the upstream entrypoint.
 COPY run.sh /run.sh
-RUN chmod a+x /run.sh /usr/local/bin/esphome-mcp
+RUN chmod a+x /run.sh
 
-EXPOSE 3333
+EXPOSE 8080
 
 CMD [ "/run.sh" ]
 
