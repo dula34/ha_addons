@@ -6,9 +6,9 @@
 # The version is defined as a build argument to allow overriding it during
 # the Docker image build process:
 #
-#   docker build --build-arg NPM_VERSION=2.14.0 .
+#   docker build --build-arg NPM_VERSION=2.16.0 .
 #
-ARG NPM_VERSION=2.14.0
+ARG NPM_VERSION=2.16.0
 
 # Use the official Nginx Proxy Manager image as the base image.
 FROM jc21/nginx-proxy-manager:${NPM_VERSION}

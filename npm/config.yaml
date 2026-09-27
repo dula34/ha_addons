@@ -1,5 +1,5 @@
 name: "Nginx Proxy Manager"
-version: "2.14.0"
+version: "2.16.0"
 slug: "nginx_proxy_manager"
 description: "Reverse proxy manager with Let's Encrypt (jc21/nginx-proxy-manager)"
 url: "https://github.com/jc21/nginx-proxy-manager"
@@ -27,5 +27,5 @@ map:
   - type: addon_config
     read_only: false
 
-options: {}
-schema: {}
+options: { }
+schema: { }
