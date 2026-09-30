@@ -24,7 +24,7 @@ ports_description:
   "443/tcp": "HTTPS"
 
 map:
-  - type: addon_config
+  - type: app_config
     read_only: false
 
 options: { }
